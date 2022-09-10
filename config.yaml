@@ -1,6 +1,6 @@
 name:  "T-Smart"
 description:  "UDP based control of the T-Smart water heater thermostats"
-version:  "0.8"
+version:  "0.8.1"
 image: britkat/tsmart
 slug:  "TSmart"
 init:  true

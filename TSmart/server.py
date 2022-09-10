@@ -140,10 +140,10 @@ while(True):
             output['High_Temperature']=int(to_little(response[14:18]),16)/10
             if response[18:20]=="01":
                 output['Heating']="On"
-                output['Power']=3000
+                output['Power_W']=3000
             else: 
                 output['Heating']="Off"
-                output['Power']=0
+                output['Power_W']=0
             output['Smart_State']=TSSmartState[int(response[20:22],16)]
             output['Low_Temperature']=int(to_little(response[22:26]),16)/10
             logger.info("Data recieved")

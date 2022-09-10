@@ -33,7 +33,7 @@ schema:
   self_run_timer: int
   Log_Level: str
   Debug_File_Location: "str?"
-  MQTT_Output: True
+  MQTT_Output: bool
   MQTT_Address: "str?"
   MQTT_Username: "str?"
   MQTT_Password: "str?"

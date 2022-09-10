@@ -1,0 +1,42 @@
+name:  "T-Smart"
+description:  "UDP based control of the T-Smart water heater thermostats"
+version:  "2022.09.10"
+image: britkat/tsmart
+slug:  "TSmart"
+init:  true
+map:
+  - config:rw
+boot:  auto
+url:  https://github.com/britkat1980/tsmart
+legacy:  true
+arch: 
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+host_network: true
+options:
+  IP_Address: "192.168.2.142"
+  self_run_timer: 10
+  Log_Level: "Error"
+  Debug_File_Location: ""
+  MQTT_Output: True
+  MQTT_Address: ""
+  MQTT_Username: ""
+  MQTT_Password: ""
+  MQTT_Topic: "TSmart"
+  MQTT_Port: 1883
+  ha_device_prefix: "TSmart"
+schema: 
+  IP_Address: str
+  self_run_timer: int
+  Log_Level: str
+  Debug_File_Location: "str?"
+  MQTT_Output: True
+  MQTT_Address: "str?"
+  MQTT_Username: "str?"
+  MQTT_Password: "str?"
+  MQTT_Topic: "str?"
+  MQTT_Port: int
+  ha_device_prefix: "str?"

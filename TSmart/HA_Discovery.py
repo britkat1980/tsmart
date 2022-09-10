@@ -123,7 +123,7 @@ class HAMQTT():
         
         TSmart_Device=str(topic).split("/")[1]
         tempObj['uniq_id']=TSmart_Device+"_"+str(topic).split("/")[-1]
-        tempObj['device']['identifiers']=TSmart_Device
+        tempObj['device']['identifiers']=TSmartSettings.ha_device_prefix
         tempObj['device']['name']=TSmartSettings.ha_device_prefix
         tempObj["name"]=TSmartSettings.ha_device_prefix+" "+str(topic).split("/")[-1].replace("_"," ") #Just final bit past the last "/"
         tempObj['device']['manufacturer']="TSmart"

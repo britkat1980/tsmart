@@ -47,12 +47,15 @@ def on_message(client, userdata, message):
     writecommand={}
     command=str(message.topic).split("/")[-1]
     if command=="setMode":
+        logger.critical("Setting TSmart Mode to: "+str(message.payload.decode("utf-8")))
         writecommand['mode']=str(message.payload.decode("utf-8"))
         result=wr.setMode(writecommand)
     elif command=="setSetPoint":
+        logger.critical("Setting Target Temp to: "+str(message.payload.decode("utf-8")))
         writecommand['temperature']=str(message.payload.decode("utf-8"))
         result=wr.setSetPoint(writecommand)
     elif command=="setPower":
+        logger.critical("Setting Power Mode to: "+str(message.payload.decode("utf-8")))
         writecommand['power']=str(message.payload.decode("utf-8"))
         result=wr.setPower(writecommand)
 

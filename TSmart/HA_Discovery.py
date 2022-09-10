@@ -42,7 +42,8 @@ class HAMQTT():
         "Heating":["binary_sensor",""],
         "Smart_State":["select","","setSmartState"],
         "Thermostat":["climate",""],
-        "Auto":["",""]
+        "Auto":["",""],
+        "Power":["sensor","Power"]
         }
 
     if TSmartSettings.MQTT_Port=='':

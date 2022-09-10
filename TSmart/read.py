@@ -3,11 +3,12 @@ from settings import TSmartSettings
 from time import sleep
 
 def controlRead():
+    logging.info("Sending Control Read message")
     msgFromClient= [241,0,0,164]
     bytesToSend = bytearray(msgFromClient)
     serverAddressPort= (TSmartSettings.IP_Address, 1337)
     bufferSize= 1028
-    logging.info("Sending Control Read message")
+
     # Create a UDP socket at client side
     UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 

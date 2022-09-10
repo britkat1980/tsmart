@@ -103,7 +103,7 @@ def updateFirstRun():
 
 
 logging.critical("Inside server.py")
-localIP     = "127.0.0.1"
+localIP     = "0.0.0.0"
 localPort   = 1337
 bufferSize  = 1024
 output={}

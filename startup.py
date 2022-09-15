@@ -8,7 +8,6 @@ from time import sleep
 import pathlib
 path = os.getcwd()
 os.chdir(os.getcwd()+"/TSmart")
-logging.critical("CWD: "+os.getcwd())
 
 logging.basicConfig(level=logging.CRITICAL, format="%(asctime)s %(name)s - %(message)s", handlers=[logging.StreamHandler()])
 logger = logging.getLogger("TSmart_STARTUP")

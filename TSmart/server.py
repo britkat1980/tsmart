@@ -1,13 +1,8 @@
 
 from ipaddress import ip_address
-import socket
-import sys
-import logging
+import socket, json, sys, logging, os, datetime
 from settings import TSmartSettings
-import re
 from mqtt import TSmartMQTT
-import os
-import datetime
 from logging.handlers import TimedRotatingFileHandler
 
 if TSmartSettings.Log_Level.lower()=="debug":
@@ -149,6 +144,27 @@ while(True):
             logger.info("Data recieved")
             output['Auto']="auto"
             output['Thermostat']=""
+            errorBuffer=response[26:58]
+            errors={}
+            if errorBuffer[0:1]=="1": errors["E01"]=True 
+            else: errors["E01"]=False
+            if errorBuffer[2:1]=="1": errors["E02"]=True
+            else: errors["E02"]=False
+            if errorBuffer[4:1]=="1": errors["E03"]=True
+            else: errors["E03"]=False
+            if errorBuffer[6:1]=="1": errors["E04"]=True
+            else: errors["E04"]=False
+            if errorBuffer[8:1]=="1": errors["W01"]=True
+            else: errors["W01"]=False
+            if errorBuffer[10:1]=="1": errors["W02"]=True
+            else: errors["W02"]=False
+            if errorBuffer[12:1]=="1": errors["W03"]=True
+            else: errors["W03"]=False
+            if errorBuffer[14:1]=="1": errors["E05"]=True
+            else: errors["E05"]=False
+            output['Errors']=json.dumps(errors)
+
+            print(errors)
             publishOutput(output)
 
 

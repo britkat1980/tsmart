@@ -1,5 +1,6 @@
 import json, logging, sys, socket
 from settings import TSmartSettings
+from logging.handlers import TimedRotatingFileHandler
 
 if TSmartSettings.Log_Level.lower()=="debug":
     if TSmartSettings.Debug_File_Location=="":
